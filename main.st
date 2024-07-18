@@ -11,13 +11,13 @@ Motor2: İleri Kapanıcak
  *)
 
 
-
 PROGRAM OtomatikKapiKontrolSistemi
 VAR
-    Sensor1: BOOL; (* Dış Cephe Sensörü *)
-    Sensor2: BOOL; (* İç Cephe Sensörü *)
-    MotorSurucuIleri: BOOL; (* Motor İleri Yön Sürücüsü *)
-    MotorSurucuGeri: BOOL; (* Motor Geri Yön Sürücüsü *)
+    (* Giriş ve Çıkış adreslerini belirleyin *)
+    Sensor1 AT %I0.0 : BOOL; (* Dış Cephe Sensörü *)
+    Sensor2 AT %I0.1 : BOOL; (* İç Cephe Sensörü *)
+    MotorSurucuIleri AT %Q0.0 : BOOL; (* Motor İleri Yön Sürücüsü *)
+    MotorSurucuGeri AT %Q0.1 : BOOL; (* Motor Geri Yön Sürücüsü *)
 
     timer: TON; (* TON(Timer On Delay) tipinde bir değişken tanımlanır *)
     timer_active: BOOL := FALSE; (* Timer'ın aktif olup olmadığını takip eden bir değişken *)
